@@ -6,7 +6,7 @@
 /*   By: malde-ch <malo@chato.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:35:57 by malde-ch          #+#    #+#             */
-/*   Updated: 2024/09/16 16:00:21 by malde-ch         ###   ########.fr       */
+/*   Updated: 2024/09/16 21:34:15 by malde-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,25 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		tolower(int c);
 int		toupper(int c);
+
+
+
+
+
+
+
+
+typedef struct s_list
+{
+	void 			*content;
+	struct s_list	*next;
+}	t_list;
+
+t_list *ft_lstnew(void *content);
+void ft_lstadd_front(t_list **lst, t_list *new);
+int ft_lstsize(t_list *lst);
+t_list *ft_lstlast(t_list *lst);
+void ft_lstadd_back(t_list **lst, t_list *new);
+
 
 #endif

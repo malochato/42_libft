@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malde-ch <malo@chato.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 13:20:50 by malde-ch          #+#    #+#             */
-/*   Updated: 2024/09/16 17:03:18 by malde-ch         ###   ########.fr       */
+/*   Created: 2024/09/16 21:18:48 by malde-ch          #+#    #+#             */
+/*   Updated: 2024/09/16 21:38:59 by malde-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	ft_lstsize(t_list *lst)
 {
-	char	*substr;
+	int		i;
 
-	substr = (char *)malloc(len + 1);
-	if (!s || !substr)
-		return (NULL);
-	if (start > ft_strlen(s))
-		return (NULL);
-	s += start;
-	ft_strlcpy(substr, s, len + 1);
-	return (substr);
+	i = 0;
+	while (lst)
+	{
+		i++;
+		lst = lst->next;
+	}
+	return (i);
 }
