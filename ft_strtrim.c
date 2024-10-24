@@ -6,7 +6,7 @@
 /*   By: malde-ch <malo@chato.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 17:54:15 by malde-ch          #+#    #+#             */
-/*   Updated: 2024/09/16 19:49:28 by malde-ch         ###   ########.fr       */
+/*   Updated: 2024/09/20 16:38:41 by malde-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	len;
 	size_t	start;
 
+	if (!s1 || !set)
+		return (NULL);
 	start = 0;
 	len = ft_strlen(s1);
 	while (is_set(set, s1[start]) && s1[start])

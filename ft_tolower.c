@@ -6,13 +6,13 @@
 /*   By: malde-ch <malo@chato.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 19:33:20 by malde-ch          #+#    #+#             */
-/*   Updated: 2024/09/12 19:38:00 by malde-ch         ###   ########.fr       */
+/*   Updated: 2024/09/19 19:49:44 by malde-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
 		return (c + 32);

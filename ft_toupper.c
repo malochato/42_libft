@@ -6,13 +6,13 @@
 /*   By: malde-ch <malo@chato.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 19:22:45 by malde-ch          #+#    #+#             */
-/*   Updated: 2024/09/12 19:32:45 by malde-ch         ###   ########.fr       */
+/*   Updated: 2024/09/19 19:49:56 by malde-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c <= 122 && c >= 97)
 		return (c -32);

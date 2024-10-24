@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malde-ch <malo@chato.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 17:31:00 by malde-ch          #+#    #+#             */
-/*   Updated: 2024/09/17 18:57:54 by malde-ch         ###   ########.fr       */
+/*   Created: 2024/09/23 19:02:04 by malde-ch          #+#    #+#             */
+/*   Updated: 2024/09/23 19:19:13 by malde-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	unsigned int	nbr;
+	t_list	*new_list;
+	t_list	*new_obj;
 
-	if (n < 0)
+	if (!lst || !f || !del)
+		return (NULL);
+	new_list = NULL;
+	while (lst)
 	{
-		nbr = -n;
-		ft_putchar_fd('-', fd);
+		new_obj = ft_lstnew(f(lst->content));
+		if (!new_obj)
+		{
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_list, new_obj);
+		lst = lst->next;
 	}
-	else
-		nbr = n;
-	if (nbr >= 10)
-		ft_putnbr_fd((nbr / 10), fd);
-	ft_putchar_fd(((nbr % 10) + 48), fd);
+	return (new_list);
 }

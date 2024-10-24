@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malde-ch <malo@chato.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 17:31:00 by malde-ch          #+#    #+#             */
-/*   Updated: 2024/09/17 18:57:54 by malde-ch         ###   ########.fr       */
+/*   Created: 2024/09/18 13:35:39 by malde-ch          #+#    #+#             */
+/*   Updated: 2024/09/23 18:52:43 by malde-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	unsigned int	nbr;
-
-	if (n < 0)
+	if (lst && del)
 	{
-		nbr = -n;
-		ft_putchar_fd('-', fd);
+		del(lst->content);
+		free(lst);
 	}
-	else
-		nbr = n;
-	if (nbr >= 10)
-		ft_putnbr_fd((nbr / 10), fd);
-	ft_putchar_fd(((nbr % 10) + 48), fd);
 }
