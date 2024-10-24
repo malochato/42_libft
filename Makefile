@@ -29,7 +29,7 @@ $(NAME): $(OBJ) $(BONUS_OBJ) $(INCLUDE)
 	@echo "compile printf done"
 	@cp $(FT_PRINTF_DIR)/libftprintf.a $(NAME) > /dev/null 2>&1
 	@$(LIB) $(NAME) $(OBJ) $(BONUS_OBJ) > /dev/null 2>&1
-	@echo "comppile all done"
+	@echo "compile all done"
 
 %.o: %.c
 	@$(CC) $(FLAGS) -c -o $@ $< > /dev/null 2>&1
