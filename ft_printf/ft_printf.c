@@ -6,7 +6,7 @@
 /*   By: malde-ch <malo@chato.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 20:29:48 by malde-ch          #+#    #+#             */
-/*   Updated: 2024/10/16 13:23:36 by malde-ch         ###   ########.fr       */
+/*   Updated: 2024/11/02 18:44:31 by malde-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_printf(const char *s, ...)
 	va_start(args, s);
 	count = 0;
 	if (!s)
-		return(-1);
+		return (-1);
 	while (*s)
 	{
 		if (*s == 37)

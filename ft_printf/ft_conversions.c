@@ -6,7 +6,7 @@
 /*   By: malde-ch <malo@chato.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 21:44:40 by malde-ch          #+#    #+#             */
-/*   Updated: 2024/10/18 21:08:41 by malde-ch         ###   ########.fr       */
+/*   Updated: 2024/11/02 18:44:06 by malde-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,5 @@ void	ft_conversions(int *count, char c, va_list args)
 	{
 		ft_putchar_count('%', count);
 		ft_putchar_count(c, count);
-	}	
+	}
 }
